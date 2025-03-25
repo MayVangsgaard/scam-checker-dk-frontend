@@ -33,7 +33,8 @@ export default function Home() {
       }
 
       const data = await response.json();
-      setResult(data.result);
+      const cleanResult = data.result.replace(/\*\*/g, ""); // Fjern alle ** dobbeltstjerner
+setResult(cleanResult);
       setRiskLevel(data.riskLevel); // 🔹 Use risk level from backend
     } catch (error) {
       console.error("Fejl ved tjek:", error);
@@ -50,12 +51,6 @@ export default function Home() {
         <p className="text-lg text-gray-700 mb-6">
           Indsæt tekst fra en besked eller email, så hjælper vi dig med at tjekke for mulig svindel.
         </p>
-
-        {/* Tab System */}
-        <div className="flex border-b border-gray-300 mb-4">
-          <button className="flex-1 py-2 text-lg font-medium bg-blue-100 border-blue-500 rounded-t-lg">Tjek en besked</button>
-          <button className="flex-1 py-2 text-lg font-medium text-gray-600 hover:bg-gray-200">Tjek en email</button>
-        </div>
 
         {/* Input Area */}
         <textarea
@@ -79,9 +74,9 @@ export default function Home() {
           <div id="scam-result" className="mt-6 p-4 border border-gray-300 rounded-lg shadow-md text-left">
             {/* Traffic Light Indicator */}
             <div className="flex flex-col items-center mb-4">
-              <div className={`w-6 h-6 mb-1 rounded-full ${riskLevel === "high" ? "bg-red-500 shadow-lg" : "bg-gray-300"}`}></div>
-              <div className={`w-6 h-6 mb-1 rounded-full ${riskLevel === "medium" ? "bg-yellow-500 shadow-lg" : "bg-gray-300"}`}></div>
-              <div className={`w-6 h-6 rounded-full ${riskLevel === "low" ? "bg-green-500 shadow-lg" : "bg-gray-300"}`}></div>
+              <div className={`w-6 h-6 mb-1 rounded-full ${riskLevel === "Høj risiko" ? "bg-red-500 shadow-lg" : "bg-gray-300"}`}></div>
+              <div className={`w-6 h-6 mb-1 rounded-full ${riskLevel === "Måske risiko" ? "bg-yellow-500 shadow-lg" : "bg-gray-300"}`}></div>
+              <div className={`w-6 h-6 rounded-full ${riskLevel === "Lav risiko" ? "bg-green-500 shadow-lg" : "bg-gray-300"}`}></div>
             </div>
             
             {/* Result Display */}
