@@ -18,7 +18,7 @@ export const metadata = {
   title: "Svindeltjek.dk | Tjek for scam",
   description: "Indsæt tekst fra en besked eller email og få hurtigt en vurdering af, om det måske er svindel – gratis og anonymt.",
   icons: {
-    icon: "/favicon.svg",
+    icon: "/favicon.svg", // ✅ dette refererer til public/favicon.svg
   },
 };
 
