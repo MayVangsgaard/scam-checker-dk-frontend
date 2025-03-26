@@ -63,7 +63,7 @@ const riskColorMap = {
         {/* Input Area */}
         <textarea
           className="w-full p-4 border border-gray-300 rounded-lg text-lg focus:ring-2 focus:ring-blue-500 mt-2 shadow-sm"
-          placeholder="Kopier teksten fra sms eller email og indsæt her (Marker tekst + Kopier + Klik på dette felt + Indsæt)."
+          placeholder="Kopier tekst og indsæt her (Marker tekst + Kopier + Klik på dette felt + Indsæt)."
           value={messageText}
           onChange={(e) => setMessageText(e.target.value)}
         ></textarea>
@@ -74,7 +74,7 @@ const riskColorMap = {
           onClick={() => checkScam("message")}
           disabled={loading}
         >
-          {loading ? "Analyserer med AI..." : "Klik for at analysere tekst"}
+          {loading ? "Analyserer med AI..." : "Klik for at analysere"}
         </button>
 
         {/* Result Section with Traffic Light */}
