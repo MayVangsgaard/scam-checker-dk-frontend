@@ -43,6 +43,14 @@ export default function Home() {
     }
   };
 
+  // 🎨 Color mapping for badge background 
+const riskColorMap = {
+  "Høj risiko": "bg-red-100 text-red-800",
+  "Måske risiko": "bg-yellow-100 text-yellow-800",
+  "Lav risiko": "bg-green-100 text-green-800",
+};
+
+
   return (
     <main className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-gray-900 p-6">
       <div className="bg-white shadow-lg rounded-xl p-8 max-w-lg text-center border border-gray-300">
@@ -72,11 +80,18 @@ export default function Home() {
         {/* Result Section with Traffic Light */}
         {result && (
           <div id="scam-result" className="mt-6 p-4 border border-gray-300 rounded-lg shadow-md text-left">
-            {/* Traffic Light Indicator */}
-            <div className="flex flex-col items-center mb-4">
-              <div className={`w-6 h-6 mb-1 rounded-full ${riskLevel === "Høj risiko" ? "bg-red-500 shadow-lg" : "bg-gray-300"}`}></div>
-              <div className={`w-6 h-6 mb-1 rounded-full ${riskLevel === "Måske risiko" ? "bg-yellow-500 shadow-lg" : "bg-gray-300"}`}></div>
-              <div className={`w-6 h-6 rounded-full ${riskLevel === "Lav risiko" ? "bg-green-500 shadow-lg" : "bg-gray-300"}`}></div>
+            {/* Colored header box with traffic light and risk level */}
+            <div className={`flex items-start mb-4 p-3 rounded-md ${riskColorMap[riskLevel]}`}>
+             {/* Vertical traffic light */}
+             <div className="flex flex-col items-center mr-4">
+            <div className={`w-4 h-4 mb-1 rounded-full ${riskLevel === "Høj risiko" ? "bg-red-500 shadow-md" : "bg-gray-300"}`}></div>
+            <div className={`w-4 h-4 mb-1 rounded-full ${riskLevel === "Måske risiko" ? "bg-yellow-500 shadow-md" : "bg-gray-300"}`}></div>
+            <div className={`w-4 h-4 rounded-full ${riskLevel === "Lav risiko" ? "bg-green-500 shadow-md" : "bg-gray-300"}`}></div>
+            </div>
+
+            {/* Risk level label (text) */}
+            <div className="flex items-start pt-1">
+            <span className="text-sm font-semibold">{riskLevel}</span>
             </div>
             
             {/* Result Display */}
