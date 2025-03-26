@@ -93,13 +93,14 @@ const riskColorMap = {
             <div className="flex items-start pt-1">
             <span className="text-sm font-semibold">{riskLevel}</span>
             </div>
+         </div>
             
             {/* Result Display */}
             <p className="text-lg font-semibold text-gray-800">Indikation:</p>
             <p className="text-md text-gray-700 mt-2 whitespace-pre-line">{result}</p>
-          </div>
+          
+        </div>
         )}
-      </div>
     </main>
   );
 }
