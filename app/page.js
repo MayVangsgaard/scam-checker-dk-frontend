@@ -49,7 +49,8 @@ setResult(cleanResult);
       <div className="bg-white shadow-lg rounded-xl p-8 max-w-lg text-center border border-gray-300">
         <h1 className="text-5xl font-extrabold text-blue-700 mb-6">Svindeltjek</h1>
         <p className="text-lg text-gray-700 mb-6">
-          Indsæt tekst fra en besked eller email,<br>så hjælper AI dig med at tjekke for mulig svindel.
+          Indsæt tekst fra en besked eller email,<br />
+          så hjælper AI dig med at tjekke for mulig svindel.
         </p>
 
         {/* Input Area */}
@@ -66,7 +67,7 @@ setResult(cleanResult);
           onClick={() => checkScam("message")}
           disabled={loading}
         >
-          {loading ? "Analyserer med AI..." : "Tjek"}
+          {loading ? "Analyserer med AI..." : "Klik for at analysere tekst"}
         </button>
 
         {/* Result Section with Traffic Light */}
