@@ -34,3 +34,4 @@ next-env.d.ts
 
 # ❌ REMOVE THIS:
 # "backend/" ← This line should NOT be here in your frontend repo
+.vercel
