@@ -4,38 +4,37 @@ import { useState } from "react";
 
 export default function Home() {
   const [messageText, setMessageText] = useState("");
-  const [emailText, setEmailText] = useState("");
-  const [emailSender, setEmailSender] = useState("");
   const [result, setResult] = useState(null);
   const [riskLevel, setRiskLevel] = useState(null); // 🔹 Now directly received from backend
   const [loading, setLoading] = useState(false); // 🔹 "Thinking" indicator
 
-  const checkScam => {
-    const text
+  const checkScam = async () => {
+    const text = messageText;
+  
     if (!text.trim()) {
       setResult("Indsæt tekst for at tjekke, lær måske hvordan fra en ven.");
       return;
     }
-
+  
     setLoading(true);
     setResult(null);
     setRiskLevel(null);
-
+  
     try {
       const response = await fetch("https://scam-checker-dk.onrender.com/check-scam", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text, type }),
+        body: JSON.stringify({ text }),
       });
-
+  
       if (!response.ok) {
         throw new Error(`Serveren svarede med en fejl: ${response.status}`);
       }
-
+  
       const data = await response.json();
-      const cleanResult = data.result.replace(/\*\*/g, ""); // Fjern alle ** dobbeltstjerner
-setResult(cleanResult);
-      setRiskLevel(data.riskLevel); // 🔹 Use risk level from backend
+      const cleanResult = data.result.replace(/\*\*/g, "");
+      setResult(cleanResult);
+      setRiskLevel(data.riskLevel);
     } catch (error) {
       console.error("Fejl ved tjek:", error);
       setResult("Beklager, der opstod en fejl. Prøv venligst igen senere.");
