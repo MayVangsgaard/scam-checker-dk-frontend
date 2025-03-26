@@ -79,7 +79,7 @@ const riskColorMap = {
           {loading ? "Analyserer med AI..." : "Klik for at analysere"}
         </button>
 
-        <p className="mt-4 w-full text-s text-gray-500 text-center">
+        <p className="mt-4 w-full text-xs text-gray-500 text-center">
         Undlad at indsætte nogen form for personlig information i tekstfeltet. Enhver delt emailadresse anonymiseres af Svindeltjek.dk før teksten sendes til analyse. Svindeltjek.dk sender tekst, du indtaster, til OpenAI (et amerikansk firma) for at identificere mulige svindelbeskeder. Tekstindhold kan derfor behandles uden for EU/EØS, hvor beskyttelsen ikke svarer til EU’s databeskyttelsesniveau. Ingen IP-adresser lagres eller sendes.
         </p>
 
