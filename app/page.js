@@ -77,30 +77,30 @@ const riskColorMap = {
           {loading ? "Analyserer med AI..." : "Klik for at analysere"}
         </button>
 
-        {/* Result Section with Traffic Light */}
-        {result && (
+                {/* Result Section with Traffic Light */}
+                {result && (
           <div id="scam-result" className="mt-6 p-4 border border-gray-300 rounded-lg shadow-md text-left">
             {/* Colored header box with traffic light and risk level */}
             <div className={`flex items-start mb-4 p-3 rounded-md ${riskColorMap[riskLevel]}`}>
-             {/* Vertical traffic light */}
-             <div className="flex flex-col items-center mr-4">
-            <div className={`w-4 h-4 mb-1 rounded-full ${riskLevel === "Høj risiko" ? "bg-red-500 shadow-md" : "bg-gray-300"}`}></div>
-            <div className={`w-4 h-4 mb-1 rounded-full ${riskLevel === "Måske risiko" ? "bg-yellow-500 shadow-md" : "bg-gray-300"}`}></div>
-            <div className={`w-4 h-4 rounded-full ${riskLevel === "Lav risiko" ? "bg-green-500 shadow-md" : "bg-gray-300"}`}></div>
+              {/* Vertical traffic light */}
+              <div className="flex flex-col items-center mr-4">
+                <div className={`w-4 h-4 mb-1 rounded-full ${riskLevel === "Høj risiko" ? "bg-red-500 shadow-md" : "bg-gray-300"}`} />
+                <div className={`w-4 h-4 mb-1 rounded-full ${riskLevel === "Måske risiko" ? "bg-yellow-500 shadow-md" : "bg-gray-300"}`} />
+                <div className={`w-4 h-4 rounded-full ${riskLevel === "Lav risiko" ? "bg-green-500 shadow-md" : "bg-gray-300"}`} />
+              </div>
+
+              {/* Risk level label (text) */}
+              <div className="flex items-start pt-1">
+                <span className="text-sm font-semibold">{riskLevel}</span>
+              </div>
             </div>
 
-            {/* Risk level label (text) */}
-            <div className="flex items-start pt-1">
-            <span className="text-sm font-semibold">{riskLevel}</span>
-            </div>
-         </div>
-            
             {/* Result Display */}
-            <p className="text-lg font-semibold text-gray-800">Indikation:</p>
-            <p className="text-md text-gray-700 mt-2 whitespace-pre-line">{result}</p>
-          
-        </div>
+            <p className="text-md text-gray-700 whitespace-pre-line">{result}</p>
+          </div>  // ✅ Lukker #scam-result korrekt
         )}
+      </div>
     </main>
   );
 }
+
