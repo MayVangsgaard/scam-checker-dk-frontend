@@ -24,12 +24,6 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="da"> {/* ✅ Changed language to Danish */}
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <html lang="da">{/* ✅ Changed language to Danish */}<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body></html>
   );
 }
