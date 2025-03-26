@@ -9,12 +9,15 @@ export default function Home() {
   const [loading, setLoading] = useState(false); // 🔹 "Thinking" indicator
 
   const checkScam = async () => {
-    const text = messageText;
+    let text = messageText;
   
     if (!text.trim()) {
       setResult("Indsæt tekst for at tjekke, lær måske hvordan fra en ven.");
       return;
     }
+
+    // 🔒 Anonymisér emailadresser
+      text = text.replace(/[\w.-]+@[\w.-]+\.\w{2,}/g, "[email fjernet]");
   
     setLoading(true);
     setResult(null);
@@ -76,6 +79,10 @@ const riskColorMap = {
           {loading ? "Analyserer med AI..." : "Klik for at analysere"}
         </button>
 
+        <p className="mt-4 w-full text-s text-gray-500 text-center">
+        Undlad at indsætte nogen form for personlig information i tekstfeltet. Enhver delt emailadresse anonymiseres af Svindeltjek.dk før teksten sendes til analyse. Svindeltjek.dk sender tekst, du indtaster, til OpenAI (et amerikansk firma) for at identificere mulige svindelbeskeder. Tekstindhold kan derfor behandles uden for EU/EØS, hvor beskyttelsen ikke svarer til EU’s databeskyttelsesniveau. Ingen IP-adresser lagres eller sendes.
+        </p>
+
                 {/* Result Section with Traffic Light */}
                 {result && (
           <div id="scam-result" className="mt-6 p-4 border border-gray-300 rounded-lg shadow-md text-left">
@@ -89,7 +96,7 @@ const riskColorMap = {
               </div>
 
               {/* Risk level label (text) */}
-              <div className="flex items-end pb-5">
+              <div className="flex items-bottom">
                 <span className="text-lg font-semibold">{riskLevel}</span>
               </div>
             </div>
