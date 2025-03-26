@@ -10,8 +10,8 @@ export default function Home() {
   const [riskLevel, setRiskLevel] = useState(null); // 🔹 Now directly received from backend
   const [loading, setLoading] = useState(false); // 🔹 "Thinking" indicator
 
-  const checkScam = async (type) => {
-    const text = type === "message" ? messageText : emailText;
+  const checkScam => {
+    const text
     if (!text.trim()) {
       setResult("Indsæt tekst for at tjekke, lær måske hvordan fra en ven.");
       return;
