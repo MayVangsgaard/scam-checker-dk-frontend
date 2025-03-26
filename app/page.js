@@ -62,9 +62,8 @@ const riskColorMap = {
 
         {/* Input Area */}
         <textarea
-          className="w-full p-4 border border-gray-300 rounded-lg text-lg focus:ring-2 focus:ring-blue-500 mt-2 shadow-sm"
-          placeholder="Kopier tekst og indsæt her.
-          (Marker tekst + Kopier + Klik på dette felt + Indsæt)."
+          className="w-full p-4 border border-gray-300 rounded-lg text-lg focus:ring-2 focus:ring-blue-500 mt-2 shadow-sm placeholder:text-center"
+          placeholder="Kopier tekst og indsæt her."
           value={messageText}
           onChange={(e) => setMessageText(e.target.value)}
         ></textarea>
@@ -91,7 +90,7 @@ const riskColorMap = {
               </div>
 
               {/* Risk level label (text) */}
-              <div className="flex items-end">
+              <div className="flex items-end pb-1">
                 <span className="text-lg font-semibold">{riskLevel}</span>
               </div>
             </div>
