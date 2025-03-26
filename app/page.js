@@ -45,9 +45,9 @@ export default function Home() {
 
   // 🎨 Color mapping for badge background 
 const riskColorMap = {
-  "Høj risiko": "bg-red-100 text-red-800",
-  "Måske risiko": "bg-yellow-100 text-yellow-800",
-  "Lav risiko": "bg-green-100 text-green-800",
+  "Høj risiko": "bg-red-100 text-black",
+  "Måske risiko": "bg-yellow-100 text-black",
+  "Lav risiko": "bg-green-100 text-black",
 };
 
 
@@ -63,7 +63,8 @@ const riskColorMap = {
         {/* Input Area */}
         <textarea
           className="w-full p-4 border border-gray-300 rounded-lg text-lg focus:ring-2 focus:ring-blue-500 mt-2 shadow-sm"
-          placeholder="Kopier tekst og indsæt her (Marker tekst + Kopier + Klik på dette felt + Indsæt)."
+          placeholder="Kopier tekst og indsæt her.<br />
+          (Marker tekst + Kopier + Klik på dette felt + Indsæt)."
           value={messageText}
           onChange={(e) => setMessageText(e.target.value)}
         ></textarea>
@@ -90,8 +91,8 @@ const riskColorMap = {
               </div>
 
               {/* Risk level label (text) */}
-              <div className="flex items-start pt-1">
-                <span className="text-sm font-semibold">{riskLevel}</span>
+              <div className="flex items-end">
+                <span className="text-lg font-semibold">{riskLevel}</span>
               </div>
             </div>
 
