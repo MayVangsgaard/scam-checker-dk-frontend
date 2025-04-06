@@ -57,6 +57,7 @@ const riskColorMap = {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-gray-900 p-6">
       <div className="bg-white shadow-lg rounded-xl p-8 max-w-lg text-center border border-gray-300">
+        <img src="/logo.jpg" alt="Svindeltjek Logo" className="mx-auto mb-4 max-h-24" />
         <h1 className="text-5xl font-extrabold text-blue-700 mb-6">Svindeltjek</h1>
         <p className="text-lg text-gray-700 mb-6">
           Indsæt tekst fra en besked eller email, så hjælper AI dig med at tjekke for mulig svindel.
@@ -80,7 +81,7 @@ const riskColorMap = {
         </button>
 
         <p className="mt-4 w-full text-xs text-gray-500 text-center">
-        Undlad at indsætte nogen form for personlig information i tekstfeltet. Enhver delt emailadresse anonymiseres af Svindeltjek.dk før teksten sendes til analyse. Svindeltjek.dk sender tekst, du indtaster, til OpenAI (et amerikansk firma) for at identificere mulige svindelbeskeder. Tekstindhold kan derfor behandles uden for EU/EØS, hvor beskyttelsen ikke svarer til EU’s databeskyttelsesniveau. Ingen IP-adresser lagres eller sendes.
+        Undlad at indsætte nogen form for personlig information i tekstfeltet. Enhver delt emailadresse anonymiseres af Svindeltjek.dk før teksten sendes til analyse. Svindeltjek.dk sender tekst, du indtaster, til OpenAI (et amerikansk firma) for at identificere mulige svindelbeskeder. Tekstindhold kan derfor behandles uden for EU/EØS, hvor beskyttelsen ikke svarer til EU’s databeskyttelsesniveau. Ingen IP-adresser sendes.
         </p>
 
                 {/* Result Section with Traffic Light */}
