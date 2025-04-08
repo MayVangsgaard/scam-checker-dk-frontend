@@ -57,8 +57,8 @@ const riskColorMap = {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-gray-900 p-6">
       <div className="bg-white shadow-lg rounded-xl p-8 max-w-lg text-center border border-gray-300">
-        <img src="/logo.jpg" alt="Svindeltjek Logo" className="mx-auto mb-4 max-h-24" />
-        <h1 className="text-5xl font-extrabold text-blue-700 mb-6">Svindeltjek</h1>
+        <img src="/logo.jpg" alt="Svindeltjek Logo" className="mx-auto mb-4 w-auto max-h-20 sm:max-h-24" />
+        <h1 className="text-xs font-extrabold text-white mb-0">Svindeltjek</h1>
         <p className="text-lg text-gray-700 mb-6">
           Indsæt tekst fra en besked eller email, så hjælper AI dig med at tjekke for mulig svindel.
         </p>
